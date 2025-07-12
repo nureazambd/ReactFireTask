@@ -3,6 +3,7 @@ import Auth from './Auth';
 import TodoApp from './TodoApp';
 import { auth } from './firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import Navbar from './components/Header';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,11 +18,12 @@ function App() {
 
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}>
-      <h1>📝 Serverless React Todo App</h1>
+      {/* <h1>📝 Serverless React Todo App</h1> */}
 
       {user ? (
         <>
-          <p>Welcome, {user.email}</p>
+          <Navbar/>
+          <p className='mt-32'>Welcome, {user.email}</p>
           <button onClick={() => signOut(auth)}>Logout</button>
           <TodoApp />
         </>
