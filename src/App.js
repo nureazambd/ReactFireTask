@@ -22,9 +22,11 @@ function App() {
 
       {user ? (
         <>
-          <Navbar/>
-          <p className='mt-32'>Welcome, {user.email}</p>
-          <button onClick={() => signOut(auth)}>Logout</button>
+          <div className="mb-10">
+            <Navbar user={user}/>
+          </div>
+          {/* <p className='mt-32'>Welcome, {user.email}</p>
+          <button onClick={() => signOut(auth)}>Logout</button> */}
           <TodoApp />
         </>
       ) : (
